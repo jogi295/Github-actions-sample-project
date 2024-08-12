@@ -1,4 +1,6 @@
-from flask import Flask, request, jsonify, render_template
+from flask import Flask, request, render_template
+import os
+import signal
 
 app = Flask(__name__)
 
@@ -20,5 +22,10 @@ def subtract():
     result = num1 - num2
     return render_template('index.html', result=f"Subtraction Result: {result}")
 
+@app.route('/stop', methods=['POST'])
+def stop():
+    os.kill(os.getpid(), signal.SIGINT)
+    return "Server stopped"
+
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000) # commit
+    app.run(host='0.0.0.0', port=5000)

@@ -6,25 +6,33 @@
     <title>Simple Calculator</title>
 </head>
 <body>
-    <h1>Simple Addition and Subtraction</h1>
-    <form action="/add" method="post">
+    <h1>Simple Calculator</h1>
+    
+    <h2>Addition</h2>
+    <form action="/add" method="POST">
         <label for="num1">Number 1:</label>
-        <input type="number" id="num1" name="num1" step="any" required><br><br>
+        <input type="text" id="num1" name="num1" required><br>
         <label for="num2">Number 2:</label>
-        <input type="number" id="num2" name="num2" step="any" required><br><br>
+        <input type="text" id="num2" name="num2" required><br>
         <button type="submit">Add</button>
     </form>
 
-    <form action="/subtract" method="post" style="margin-top: 20px;">
+    <h2>Subtraction</h2>
+    <form action="/subtract" method="POST">
         <label for="num1">Number 1:</label>
-        <input type="number" id="num1" name="num1" step="any" required><br><br>
+        <input type="text" id="num1" name="num1" required><br>
         <label for="num2">Number 2:</label>
-        <input type="number" id="num2" name="num2" step="any" required><br><br>
+        <input type="text" id="num2" name="num2" required><br>
         <button type="submit">Subtract</button>
     </form>
 
+    <h2>Stop Server</h2>
+    <form action="/stop" method="POST">
+        <button type="submit">Stop Server</button>
+    </form>
+
     {% if result %}
-    <h2>{{ result }}</h2>
+    <h3>Result: {{ result }}</h3>
     {% endif %}
 </body>
 </html>
