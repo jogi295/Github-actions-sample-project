@@ -1,4 +1,4 @@
-name: Python application
+name: Python Application
 
 on:
   push:
@@ -9,7 +9,7 @@ on:
       - main
 
 jobs:
-  build-and-run:
+  build-and-run-my-first-applications:
     runs-on: ubuntu-latest
 
     steps:
